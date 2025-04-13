@@ -1,0 +1,145 @@
+@model testAgain.Models.FeedbackModel // Замініть YourNamespace на ваш простір імен <!DOCTYPE html> <html lang="uk"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Толкова Зворотній Зв'язок</title> <style> body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #333;
+}
+
+.container {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-size: 1.2rem;
+    color: #34495e;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+label {
+    display: block;
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 0.3rem;
+    font-weight: 500;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+}
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    textarea:focus {
+        border-color: #3498db;
+        box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+        outline: none;
+    }
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+input[type="submit"] {
+    background-color: #3498db;
+    color: #fff;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+    input[type="submit"]:hover {
+        background-color: #2980b9;
+    }
+
+.footer-text {
+    margin-top: 1.5rem;
+    font-size: 0.8rem;
+    color: #777;
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1rem;
+    }
+}
+
+</style >
+</head >
+<body >
+<div class="container" >
+<h1 > Толкова</h1 >
+<h2 > Зворотній Зв'язок</h2>
+<form asp-action="Check" method="post" >
+<div class="form-group" >
+<label for="name" > Введіть ім'я</label>
+<input type="text" id="name" name="name" value="@Model?.Name" placeholder="Макс" / >
+</div >
+<div class="form-group" >
+<label for="surname" > Введіть фамілію</label >
+<input type="text" id="surname" name="surname" value="@Model?.Surname" placeholder="Заславський" / >
+</div >
+<div class="form-group" >
+<label for="age" > Введіть вік</label >
+<input type="text" id="age" name="age" value="@Model?.Age" placeholder="18" / >
+</div >
+<div class="form-group" >
+<label for="email" > Введіть email</label >
+<input type="email" id="email" name="email" value="@Model?.Email" placeholder="maks14300@gmail.com" / >
+</div >
+<div class="form-group" >
+<label for="message" > Введіть повідомлення</label >
+<textarea id="message" name="message" placeholder="Need to type ur message" > @Model?.Message</textarea >
+</div >
+<input type="submit" value="Send" / >
+</form >
+<div class="footer-text" > Всі права захищені</div >
+</div >
+</body >
+</html >
